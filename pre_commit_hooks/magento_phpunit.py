@@ -28,11 +28,11 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     )
     args = parser.parse_args(argv)
 
-    if module.match('**/magento/app/code/*/*'):
+    if True:
         # path to the root of magento
-        magento = module.parent.parent.parent.parent
+         magento = module / 'magento'
         # path to the phpunit
-        exe = magento / 'magento/vendor/bin/phpunit'
+        exe = magento / 'vendor/bin/phpunit'
         test = module / f'Test/{args.type}/'
 
         if test.is_dir():
