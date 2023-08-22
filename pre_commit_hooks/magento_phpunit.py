@@ -30,7 +30,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     if True:
         # path to the root of magento
-         magento = module / 'magento'
+        magento = module / 'magento'
         # path to the phpunit
         exe = magento / 'vendor/bin/phpunit'
         test = module / f'Test/{args.type}/'
