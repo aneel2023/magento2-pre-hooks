@@ -48,7 +48,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     if module.match('*/*/magento/app/code/*/*'):
         print('Root Path5')
 
-    if true:
+    if True:
         # path to the root of magento
         magento = module.parent.parent.parent.parent
         # path to the phpcs
