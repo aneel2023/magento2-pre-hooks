@@ -48,7 +48,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     if module.match('*/*/magento/app/code/*/*'):
        print('Root Path5')
 
-    #if module.match('**/magento/app/code/*/*'):
+    if true:
         # path to the root of magento
         magento = module.parent.parent.parent.parent
         # path to the phpcs
@@ -68,9 +68,9 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         else:
             print('phpcs is not installed')
             retval = 1
-    #else:
-    #    print(f'{module}: incorrect module path')
-    #    retval = 1
+    else:
+        print(f'{module}: incorrect module path')
+        retval = 1
 
     return retval
 
