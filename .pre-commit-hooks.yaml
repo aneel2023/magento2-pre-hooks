@@ -1,4 +1,4 @@
-# Check Xml using Xsd
+# Check Xml using Xsdhttps://github.com/aneel2023/magento2-pre-hooks
 -   id: magento-xml
     name: Check Xml using Xsd
     description: Validates the XML file against the specified XSD file.
