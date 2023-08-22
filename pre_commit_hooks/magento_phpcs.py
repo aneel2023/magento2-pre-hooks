@@ -50,13 +50,15 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     if True:
         # path to the root of magento
-        magento = module.parent.parent.parent.parent
+        #magento = module.parent.parent.parent.parent
+        magento = module / 'magento'
+        print(f'{magento}:  module path')
         # path to the phpcs
         if args.autofix:
-            exe = magento / 'magento/vendor/bin/phpcbf'
+            exe = magento / 'vendor/bin/phpcbf'
         else:
-            exe = magento / 'magento/vendor/bin/phpcs'
-
+            exe = magento / 'vendor/bin/phpcs'
+        print(f'{exe}:  exe path')
         if exe.is_file():
             command = [args.php, f'{exe}', f'--standard={args.standard}']
             command += args.filenames
