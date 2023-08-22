@@ -28,7 +28,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     )
     args = parser.parse_args(argv)
     magentoApp = module / 'magento/app/code'
-    if magentoApp.isdir():
+    if magentoApp.is_dir():
         # path to the root of magento
         magento = module / 'magento'
         # path to the phpunit
