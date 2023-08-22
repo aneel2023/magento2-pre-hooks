@@ -23,12 +23,12 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         help = 'specify a minimum number of identical lines'
     )
     args = parser.parse_args(argv)
-
-    if module.match('**/magento/app/code/*/*'):
+    magentoApp = module / 'magento/app/code'
+    if magentoApp.isdir():
         # path to the root of magento
-        magento = module.parent.parent.parent.parent
+        magento = module / 'magento'
         # path to the phpcpd
-        exe = magento / 'magento/vendor/bin/phpcpd'
+        exe = magento / 'vendor/bin/phpcpd'
 
         if module.is_dir():
             if exe.is_file():

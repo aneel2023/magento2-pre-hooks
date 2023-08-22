@@ -86,9 +86,10 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     )
     args = parser.parse_args(argv)
 
-    if module.match('**/magento/app/code/*/*'):
+    magentoApp = module / 'magento/app/code'
+    if magentoApp.isdir():
         # path to the root of magento
-        magento = module.parent.parent.parent.parent
+        magento = module / 'magento'
         dictionary = magento / 'magento/.misc.xml'
         if dictionary.is_file():
             try:

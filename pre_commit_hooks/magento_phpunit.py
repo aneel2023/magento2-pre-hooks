@@ -27,8 +27,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         help = 'specifies the part of path to a tested files'
     )
     args = parser.parse_args(argv)
-
-    if True:
+    magentoApp = module / 'magento/app/code'
+    if magentoApp.isdir():
         # path to the root of magento
         magento = module / 'magento'
         # path to the phpunit

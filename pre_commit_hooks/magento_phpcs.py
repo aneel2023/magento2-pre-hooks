@@ -32,33 +32,16 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     )
     args = parser.parse_args(argv)
 
-    print('Root Path0')
-    if module.match('magento/app/code/*/*'):
-       print('Root Path1')
-
-    if module.match('/magento/app/code/*/*'):
-        print('Root Path2')
-
-    if module.match('*/magento/app/code/*/*'):
-        print('Root Path3')
-
-    if module.match('app/code/*/*'):
-        print('Root Path4')
-
-    if module.match('*/*/magento/app/code/*/*'):
-        print('Root Path5')
-
-    if True:
+    magentoApp = module / 'magento/app/code'
+    if magentoApp.isdir():
         # path to the root of magento
         #magento = module.parent.parent.parent.parent
         magento = module / 'magento'
-        print(f'{magento}:  module path')
         # path to the phpcs
         if args.autofix:
             exe = magento / 'vendor/bin/phpcbf'
         else:
             exe = magento / 'vendor/bin/phpcs'
-        print(f'{exe}:  exe path')
         if exe.is_file():
             command = [args.php, f'{exe}', f'--standard={args.standard}']
             command += args.filenames
