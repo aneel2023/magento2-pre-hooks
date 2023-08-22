@@ -32,6 +32,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     )
     args = parser.parse_args(argv)
 
+    print(f'{module.parent.parent.parent.parent}: Root Path')
     if module.match('**/magento/app/code/*/*'):
         # path to the root of magento
         magento = module.parent.parent.parent.parent
