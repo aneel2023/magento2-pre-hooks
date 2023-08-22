@@ -37,16 +37,16 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
        print('Root Path1')
 
     if module.match('/magento/app/code/*/*'):
-      print('Root Path2')
+        print('Root Path2')
 
     if module.match('*/magento/app/code/*/*'):
-      print('Root Path3')
+        print('Root Path3')
 
     if module.match('app/code/*/*'):
-       print('Root Path4')
+        print('Root Path4')
 
     if module.match('*/*/magento/app/code/*/*'):
-       print('Root Path5')
+        print('Root Path5')
 
     if true:
         # path to the root of magento
