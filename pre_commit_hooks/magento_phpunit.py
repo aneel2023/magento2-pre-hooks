@@ -34,10 +34,12 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         # path to the phpunit
         exe = magento / 'vendor/bin/phpunit'
         test = module / f'Test/{args.type}/'
-
+        print(f'{exe}: exe path')
+        print(f'{test}: test path')
         if test.is_dir():
             if exe.is_file():
                 config = magento / args.config.strip('/')
+                print(f'{config}: config path')
                 command = [args.php, f'{exe}', '-c', str(config), str(test)]
                 process = subprocess.run(command, capture_output=True, universal_newlines=True)
                 retval = process.returncode
