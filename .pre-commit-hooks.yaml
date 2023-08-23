@@ -42,7 +42,7 @@
     language: python
     pass_filenames: false
     #always_run: true
-    args: ["-c=magento/dev/tests/unit/phpunit.xml"]
+    #args: ["-c=magento/dev/tests/unit/phpunit.xml"]
 # REST API PHPUnit test
 #-   id: magento-webapi-rest-phpunit
 #    name: REST API PHP Unit test
